@@ -17,4 +17,5 @@ on td.no_entry_so = ts.no_entry_so
 left join schema_1.ms_product as mp
 on ts.kode_barang = mp.kode_produk 
 left join schema_1.ms_customer as mc 
-on ts.kode_customer = mc.kode_customer 
+on ts.kode_customer = mc.kode_customer
+order by no_do
