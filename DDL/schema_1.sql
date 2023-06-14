@@ -113,7 +113,7 @@ CREATE TABLE schema_1.tr_so
     no_so         varchar(200) NULL,
     kode_barang   varchar(200) NULL,
     kode_sales    varchar(200) NULL,
-    qty           int       NULL,
+    qty           int          NULL,
     satuan        varchar(200) NULL,
     tgl_so        date         NULL,
     kode_customer varchar(200) NULL
