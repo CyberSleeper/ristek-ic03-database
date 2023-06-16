@@ -9,6 +9,6 @@ Check out the *nodes* table in *schema_2* schema:
 
 Using a query, create a result as shown below.
 
-![Table Query](query5.png)
+![Table Query](query6.png)
 
 **Data Source**: schema_2
