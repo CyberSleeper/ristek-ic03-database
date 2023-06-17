@@ -1,0 +1,68 @@
+// https://dbdiagram.io/d/648d845802bd1c4a5ea2e14c
+
+Table ms_customer {
+  kode_customer varchar(200)
+  nama_customer varchar(200)
+  kota_customer varchar(200)
+  ongkos_kirim  integer
+}
+
+Table ms_pegawai {
+  kode_pegawai  varchar(200)
+  nama_pegawai  varchar(200)
+  jabatan       varchar(200)
+  target        integer
+  tanggal_masuk datetime
+}
+
+Table ms_product {
+  kode_produk   varchar(200)
+  nama_product  varchar(200)
+  jenis         varchar(200)
+  harga_satuan  integer
+  kode_vendor   varchar(200)
+}
+
+Table ms_vendor {
+  vendor        varchar(100)
+  kode_vendor   varchar(100)
+  kota_vendor   varchar(100)
+}
+
+Table tr_do {
+  no_entry_do   integer
+  no_entry_so   integer
+  no_do         varchar(200)
+  tgl_do        datetime
+}
+
+Table tr_inv {
+    no_entry_inv  integer
+    no_entry_do   integer
+    no_inv        varchar(200)
+    tgl_inv       datetime
+}
+
+Table tr_so {
+    no_entry_so   integer
+    no_so         varchar(200)
+    kode_produk   varchar(200)
+    kode_sales    varchar(200)
+    qty           integer
+    satuan        varchar(200)
+    tgl_so        datetime
+    kode_customer varchar(200)
+}
+
+
+Ref: tr_inv.no_entry_do - tr_do.no_entry_do
+
+Ref: tr_so.no_entry_so - tr_do.no_entry_so
+
+Ref: tr_so.kode_produk > ms_product.kode_produk
+
+Ref: ms_vendor.kode_vendor < ms_product.kode_vendor
+
+Ref: ms_customer.kode_customer < tr_so.kode_customer
+
+Ref: ms_pegawai.kode_pegawai < tr_so.kode_sales
